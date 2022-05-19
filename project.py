@@ -75,16 +75,17 @@ class Run:
                 self.teams[i].fieldability = False
 
     def whosyourteam(self):
-        x = input(
-            'Tell me your team, Ill tell you if they can field for their upcoming game\n').title()
         team_name = set()
         for i in self.teams:
             team_name.add(i)
+        print (f'These are the current teams in the Champions League:\n{team_name}')
+        x = input(
+            'Tell me your team, Ill tell you if they can field for their upcoming game this Champions Weekend\n').title()
         if x in team_name:
             if self.teams[x].fieldability == False:
-                print(f'Sorry bud {x} is not going to be able to play')
+                print(f'Sorry bud {x} is not going to be able to play this weekend')
             else:
-                print(f'Lucky you {x} will be able to play.')
+                print(f'Lucky you {x} will be able to play this weekend.')
         else:
             print(f'Input "{x}" Is Invalid')
 
